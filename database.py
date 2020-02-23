@@ -10,9 +10,16 @@ def getDataBase(mysql_obj):
         class Meta:
             database = mysql_db
 
-    class DataRecord(BaseModel):
+    class Users(BaseModel):  # 用户表
         device_id = IntegerField(primary_key=True)
-        create_time = DateTimeField()
-        data_content = CharField()
+        username = CharField()  # 用户名
+        password = CharField()
 
-    return mysql_db, DataRecord
+    class DataRecord(BaseModel):
+        device_id = IntegerField()  # 设为参照用户表的外键 ps:这个外键把爷给整懵了，你来整下吧
+        create_time = DateTimeField(primary_key=True)
+        data_content = CharField()
+        previous_hash = CharField()  # 前一列的hash值
+        hash = CharField()  # 当前列表的hash
+
+    return mysql_db, Users, DataRecord

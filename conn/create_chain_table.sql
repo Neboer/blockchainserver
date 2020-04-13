@@ -4,7 +4,7 @@ create table blocks
     id           int auto_increment primary key ,
     device_id    varchar(20),
     create_time  timestamp(4),
-    data_content varchar(255),
+    data_content varchar(0),
     hash         binary(20) GENERATED ALWAYS as (unhex(sha1(concat(device_id, create_time, data_content)))) virtual ,
     prev_hash    binary(20)
 );

@@ -1,4 +1,4 @@
-from record_block.block_chain import BlockChain
+from models.block_chain import BlockChain
 
 myBlockChain = BlockChain()
 print(myBlockChain.chain_test())

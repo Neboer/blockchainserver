@@ -2,6 +2,7 @@ from json import load
 
 
 def get_config():
-    with open("config.json") as config:
+    file = 'config.json'
+    with open(file) as config:
         config = load(config)
     return config

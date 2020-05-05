@@ -1,0 +1,8 @@
+ {
+  "host": "",
+  "port":,
+  "user":"",
+  "password":"",
+  "database":"",
+  "charset":""
+}
